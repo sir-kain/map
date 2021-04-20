@@ -1,0 +1,36 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 60px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+svg {
+  width: 800px;
+}
+
+svg path {
+  fill: #3da2ac;
+  stroke: #fff;
+  stroke-width: 1px;
+  transition: fill 0.2s;
+}
+
+svg a.active path {
+  fill: #032325;
+}
+
+ul li a {
+  color: #3da2ac;
+  font-size: 1.4rem;
+}
+
+ul li.active a {
+  color: #032325;
+}
