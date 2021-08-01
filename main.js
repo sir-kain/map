@@ -16,7 +16,8 @@ import {
   WebGLRenderer,
 } from "three";
 import { OrbitControls } from "./orbitControls";
-import spriteUrl from "./sprite.png";
+import spriteImg from "./sprite.png";
+import sceneImg from "./look.jpg";
 
 const svgItems = document.querySelectorAll("svg a");
 const links = document.querySelectorAll("[data-ref]");
@@ -65,7 +66,7 @@ const camera = new PerspectiveCamera(
 
 // sphere
 const geometry = new SphereGeometry(50, 32, 32);
-const texture = new TextureLoader().load("look.jpg");
+const texture = new TextureLoader().load(sceneImg);
 texture.repeat.x = -1;
 texture.wrapS = RepeatWrapping;
 const material = new MeshBasicMaterial({
@@ -128,7 +129,7 @@ addTooltip(
 
 function addTooltip(position, name) {
   // tooltip
-  const spriteMap = new TextureLoader().load(spriteUrl);
+  const spriteMap = new TextureLoader().load(spriteImg);
   const spriteMaterial = new SpriteMaterial({ map: spriteMap });
   const sprite = new Sprite(spriteMaterial);
   sprite.position.copy(position.clone().normalize().multiplyScalar(30));
