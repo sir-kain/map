@@ -16,6 +16,7 @@ import {
   WebGLRenderer,
 } from "three";
 import { OrbitControls } from "./orbitControls";
+import spriteUrl from "./sprite.png";
 
 const svgItems = document.querySelectorAll("svg a");
 const links = document.querySelectorAll("[data-ref]");
@@ -110,15 +111,24 @@ function animate() {
 // });
 
 // waly
-addTooltip(new Vector3(3.071944204956998, -1.2577599268684923, -49.63565006990255), 'Waly')
+addTooltip(
+  new Vector3(3.071944204956998, -1.2577599268684923, -49.63565006990255),
+  "Waly"
+);
 // Mosquée
-addTooltip(new Vector3(-34.56692223611614, 13.092053453491097, -33.4974391576892), 'Mosquée')
+addTooltip(
+  new Vector3(-34.56692223611614, 13.092053453491097, -33.4974391576892),
+  "Mosquée"
+);
 // Resto
-addTooltip(new Vector3(7.159539871697577, 11.016243591893506, -48.01806445945114), "Resto")
+addTooltip(
+  new Vector3(7.159539871697577, 11.016243591893506, -48.01806445945114),
+  "Resto"
+);
 
 function addTooltip(position, name) {
   // tooltip
-  const spriteMap = new TextureLoader().load("sprite.png");
+  const spriteMap = new TextureLoader().load(spriteUrl);
   const spriteMaterial = new SpriteMaterial({ map: spriteMap });
   const sprite = new Sprite(spriteMaterial);
   sprite.position.copy(position.clone().normalize().multiplyScalar(30));
